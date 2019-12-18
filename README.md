@@ -1,5 +1,24 @@
 # Packer images for GCP
 
+```                                                                                                                                    __________    ____ |  | __ ___________  \_ |__ _____    ______ ____   |__| _____ _____     ____   ____   ______
+\____ \__  \ _/ ___\|  |/ // __ \_  __ \  | __ \\__  \  /  ___// __ \  |  |/     \\__  \   / ___\_/ __ \ /  ___/
+|  |_> > __ \\  \___|    <\  ___/|  | \/  | \_\ \/ __ \_\___ \\  ___/  |  |  Y Y  \/ __ \_/ /_/  >  ___/ \___ \ 
+|   __(____  /\___  >__|_ \\___  >__|     |___  (____  /____  >\___  > |__|__|_|  (____  /\___  / \___  >____  >
+|__|       \/     \/     \/    \/             \/     \/     \/     \/           \/     \//_____/      \/     \/  
+ 
+Build packer GCE images for Google Cloud
+ 
+ 
+Usage: make [TARGET]... [MAKEVAR1=SOMETHING]...
+
+Available targets:
+build                           Build a packer image for GCP Compute Engine
+_build_debug                    Build a packer image for GCP Compute Engine with debug enabled
+validate                        Validates a packer template
+clean                           Delete the values in .envy.mk
+help                            This help target
+
+```
 ## Quick start
 Create a service account in a project and assign the below roles
 

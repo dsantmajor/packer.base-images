@@ -12,7 +12,7 @@ build: ## Build a packer image for GCP Compute Engine
 	@packer build $(PACKER_FILE).json
 
 .PHONY: _build_debug
-_build_debug: ## Build a packer image for GCP Compute Engine
+_build_debug: ## Build a packer image for GCP Compute Engine with debug enabled
 	@packer build -debug $(PACKER_FILE).json
 
 .PHONY: validate
@@ -45,7 +45,7 @@ help: ## This help target
 	@cat .banner
 	@echo " "
 	@echo " "
-	@echo "Clone this repo as a template"
+	@echo "Build packer GCE images for Google Cloud"
 	@echo " "
 	@echo " "
 	@echo "$$HELP_TEXT"

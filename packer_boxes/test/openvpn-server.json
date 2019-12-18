@@ -1,0 +1,35 @@
+{
+  "variables": {
+    "source_image_family": "{{env `source_image_family`}}",
+    "machine_type": "{{env `machine_type`}}",
+    "region": "{{env `region`}}",
+    "zone": "{{env `zone`}}",
+    "project_id": "{{env `project_id`}}",
+    "service_account_json": "{{env `service_account_json`}}"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `project_id`}}",
+      "machine_type": "{{user `machine_type`}}",
+      "source_image_family": "{{user `source_image_family`}}",
+      "region": "{{user `region`}}",
+      "zone": "{{user `zone`}}",
+      "image_description": "Demo Ubuntu Machine Image",
+      "image_name": "u16demo-{{timestamp}}",
+      "disk_size": 16,
+      "disk_type": "pd-ssd",
+      "ssh_username": "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 10",
+        "uname -a",
+        "uptime"
+      ]
+    }
+  ]
+}
